@@ -1,0 +1,1852 @@
+CODIGOS DE PROGRAMACION BASICA
+
+1. HOLA MUNDO 
+#include <iostream>
+using namespace std;
+
+int main(){
+
+cout<<"hola mundo";
+
+
+    return 0;
+}
+
+2.AREA DEL TRIANGULO
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float base, altura, area;
+
+    // Pedir la base y la altura del triángulo al usuario
+    cout << "Introduce la base del triángulo: ";
+    cin >> base;
+    cout << "Introduce la altura del triángulo: ";
+    cin >> altura;
+
+    // Calcular el área del triángulo
+    area = (base * altura) / 2;
+
+    // Mostrar el resultado al usuario
+    cout << "El área del triángulo es: " << area << endl;
+
+    return 0;
+}
+
+3.CALENDARIO
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num_mes;
+
+    // Pedir al usuario un número del 1 al 12
+    cout << "Ingrese un número del 1 al 12: ";
+    cin >> num_mes;
+
+    // Imprimir el nombre del mes correspondiente
+    switch(num_mes) {
+        case 1:
+            cout << "Enero" << endl;
+            break;
+        case 2:
+            cout << "Febrero" << endl;
+            break;
+        case 3:
+            cout << "Marzo" << endl;
+            break;
+        case 4:
+            cout << "Abril" << endl;
+            break;
+        case 5:
+            cout << "Mayo" << endl;
+            break;
+        case 6:
+            cout << "Junio" << endl;
+            break;
+        case 7:
+            cout << "Julio" << endl;
+            break;
+        case 8:
+            cout << "Agosto" << endl;
+            break;
+        case 9:
+            cout << "Septiembre" << endl;
+            break;
+        case 10:
+            cout << "Octubre" << endl;
+            break;
+        case 11:
+            cout << "Noviembre" << endl;
+            break;
+        case 12:
+            cout << "Diciembre" << endl;
+            break;
+        default:
+            cout << "El número ingresado no es válido" << endl;
+            break;
+    }
+
+    return 0;
+}
+
+4.PROMEDIO
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  float nota1, nota2, nota3, promedio;
+  string letra;
+
+  cout << "Ingrese la primera nota: ";
+  cin >> nota1;
+  cout << "Ingrese la segunda nota: ";
+  cin >> nota2;
+  cout << "Ingrese la tercera nota: ";
+  cin >> nota3;
+
+  promedio = (nota1 + nota2 + nota3) / 3.0;
+
+  if (promedio <= 20 && promedio > 18) {
+    letra = "A";
+  } else if (promedio <= 18 && promedio > 15) {
+    letra = "B";
+  } else if (promedio <= 15 && promedio > 13) {
+    letra = "C";
+  } else if (promedio <= 13 && promedio >= 10.5) {
+    letra = "D";
+  } else if (promedio < 10.5 && promedio > 5) {
+    letra = "E";
+  } else if (promedio <= 5 && promedio >= 1) {
+    letra = "F";
+  } else {
+    letra = "ingrese notas corectas";
+  }
+
+  cout << "El promedio es: " << promedio << endl;
+  cout << "La nota que le corresponde es: " << letra << endl;
+
+  return 0;
+}
+
+5.PAR O IMPAR
+
+#include <stdio.h>
+
+int main() {
+   int num = 7;
+   
+   // Verificar si el número es par o impar
+   if (num % 2 == 0) {
+      printf("%d es un número par.\n", num);
+   } else {
+      printf("%d es un número impar.\n", num);
+   }
+   
+   // Imprimir la dirección de memoria de la variable "num"
+   printf("La dirección de memoria de la variable num es: %p", &num);
+   
+   return 0;
+}
+
+6.VARIABLE X VALOR 5
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 5;                       // Se define la variable "x" y se le asigna el valor 5
+    int* direccion_memoria = &x;     // Se obtiene la dirección de memoria de la variable "x" y se almacena en un puntero
+    bool es_primo = true;            // Se inicializa la variable "es_primo" como verdadera
+    for (int i = 2; i < x; i++) {    // Se itera desde 2 hasta "x-1" para verificar si "x" es divisible por algún número
+        if (x % i == 0) {            // Si "x" es divisible por "i", entonces no es primo
+            es_primo = false;        // Se actualiza la variable "es_primo" a falso
+            break;                  // Se sale del ciclo
+        }
+    }
+    if (es_primo) {                  // Si la variable "es_primo" sigue siendo verdadera, entonces "x" es primo
+        cout << "El nuumero es primo" << endl;
+    } else {
+        cout << "El numero no es primo" << endl;
+    }
+    cout << "DirecciOn de memoria: " << direccion_memoria << endl;  // Se imprime la dirección de memoria de la variable "x"
+    return 0;
+}
+
+7.VARIABLE PRIMO-FALSO
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 5;                       // Se define la variable "x" y se le asigna el valor 5
+    int* p = &x;                     // Se crea un puntero "p" que apunta a la dirección de memoria de "x"
+    *p = 53;                         // Se asigna el valor 53 a través del puntero "p"
+    bool es_primo = true;            // Se inicializa la variable "es_primo" como verdadera
+    for (int i = 2; i < x; i++) {    // int desde 2 hasta "x-1" para verificar si "x" es divisible por algún nummero
+        if (x % i == 0) {            // Si "x" es divisible por "i", entonces no es primo
+            es_primo = false;        // Se actualiza la variable "es_primo" a falso
+            break;                  // Se sale del ciclo
+        }
+    }
+    if (es_primo) {                  // Si la variable "es_primo" sigue siendo verdadera, entonces "x" es primo
+        cout << "El numero es primo" << endl;
+    } else {
+        cout << "El numero no es primo" << endl;
+    }
+    cout << "Direccioon de memoria: " << p << endl;  // Se imprime la dirección de memoria de la variable "x" a través del puntero "p"
+    return 0;
+}
+
+8.ARREGLOS
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a[3];
+  a[0] = 1;
+  a[1] = 2;
+  a[2] = 3;
+  
+  string nombres[] = {"Hugo", "Paco", "Luis", "Juanito", "Cesar"};
+  cout << nombres[3]<<"\n";
+  nombres[1]="Clara";
+  cout<<nombres[1];
+  cout<<"\n"<<a[2] ;
+
+  /*for(int i=0; i<3;i++){
+    //cout<<"\n"<<"el valor se repite: "<<i;
+    cout<<"\n"<<"el valor del vecto a["<<i<<"]"<< a[i];
+  }
+//valor maximo esta de manera estatica
+  for(int i=0; i<5;i++){
+    //cout<<"\n"<<"el valor se repite: "<<i;
+    cout<<"\n"<<"el valor del vecto nombres["<<i<<"]"<< nombres[i];
+int tamaño = sizeof(a)/ sizeof(a[0]);
+  int tamaño2 = sizeof(nombres)/ sizeof(nombres[0]);
+  cout<<"\n"<<tamaño;
+  cout<<"\n"<<tamaño2;
+//valor maximo de manera dinamica
+  for(int i=0; i<tamaño;i++){
+    //cout<<"\n"<<"el valor se repite: "<<i;
+    cout<<"\n"<<"el valor del vecto a["<<i<<"]"<< a[i];
+  }
+
+  for(int i=0; i<tamaño2;i++){
+    //cout<<"\n"<<"el valor se repite: "<<i;
+    cout<<"\n"<<"el valor del vecto nombres["<<i<<"]"<< nombres[i];
+  }
+  //int tamaño = sizeof(a);
+  //int tamano = sizeof(a) / sizeof(a[0]);
+  //cout<<"\n"<<tamano;
+
+
+  return 0;
+}
+
+9.PRODUCTOS ARREGLOS
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string productos[5] = {"producto1", "producto2", "producto3", "producto4", "producto5"};
+
+    // Reemplazar el producto en la posición 3 con la palabra computadora
+    productos[2] = "computadora";
+
+    // poner el arreglo actualizado
+    for (int i = 0; i < 5; i++) {
+        cout << productos[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+10.ARREGLO Y RECORRIDO
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Declaracion del arreglo de 5 libros
+    string libros[5];
+
+    // Recorrido para ingresar los libros
+    for (int i = 0; i < 5; i++) {
+        cout << "Ingrese el nombre del libro " << i+1 << ": ";
+        getline(cin, libros[i]);
+    }
+
+    // Impresion del arreglo de libros
+    cout << "Los libros ingresados son: ";
+    for (int i = 0; i < 5; i++) {
+        cout << libros[i] << ", ";
+    }
+
+    return 0;
+}
+
+11. ARREGLO VALmax
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    const int n = 5; // Tamanio del arreglo
+    float precios[n]; // Declaracion del arreglo de precios
+
+    // Recorrido para ingresar los precios
+    for (int i = 0; i < n; i++) {
+        cout << "Ingrese el precio del producto " << i+1 << ": ";
+        cin >> precios[i];
+    }
+
+    // Impresion del arreglo de precios
+    cout << "Los precios ingresados son: ";
+    for (int i = 0; i < n; i++) {
+        cout << precios[i] << " ";
+    }
+    cout << endl;
+
+// Calculo del valor maximo y del undice del valor maximo
+    float max_valor = precios[0];
+    int max_indice = 0;
+    for (int i = 1; i < n; i++) {
+        if (precios[i] > max_valor) {
+            max_valor = precios[i];
+            max_indice = i;
+        }
+    }
+
+    // Impresion del valor maximo y del indice del valor maximo
+    cout << "El valor maximo es " << max_valor << " y se encuentra en el indice " << max_indice << endl;
+
+    return 0;
+}
+
+12. TAREA ARREGLO 
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a[10] = {1,2,3,4,5,6,7,8,9,10};
+  int tamanio = sizeof(a)/ sizeof(a[0]);
+  cout<<"\n"<<tamanio;
+//valor maximo de manera dinamica
+  for(int i=0; i<tamanio;i++){
+    //cout<<"\n"<<"el valor se repite: "<<i;
+    cout<<"\n"<<"el valor del vecto a["<<i<<"]"<< a[i];
+  }
+
+//numero menor
+  int menor = a[0];
+
+    for (int i = 1; i < tamanio; i++)
+    {
+        if (a[i] < menor)
+        {
+            menor = a[i]; // actualizamos el valor del menor
+        }
+    }
+
+    cout << "el numero menor es: " << menor;
+    
+  return 0;
+}
+
+13.ARREGLO NUM ALEATORIO CLASE
+
+c+#include <iostream>
+using namespace std;
+
+int main() {
+  int a[10] = {1,2,3,4,5,6,7,8,9,10};
+  int tamaño = sizeof(a)/ sizeof(a[0]);
+  cout<<"\n"<<tamaño;
+//valor maximo de manera dinamica
+  for(int i=0; i<tamaño;i++){
+    //cout<<"\n"<<"el valor se repite: "<<i;
+    cout<<"\n"<<"el valor del vecto a["<<i<<"]"<< a[i];
+  }
+
+//numero menor
+  int menor = a[0];
+
+    for (int i = 1; i < tamaño; i++)
+    {
+        if (a[i] < menor)
+        {
+            menor = a[i]; // actualizamos el valor del menor
+        }
+    }
+
+    cout << "el numero menor es: " << menor;
+    
+  return 0;
+}
+
+14. ARREGLO NUM ALEATORIO CLASE MAYOR
+
+  }
+
+//numero mayor
+  int mayor = a[0];
+
+    for (int i = 1; i > tamanio; i++)
+    {
+        if (a[i] > mayor)
+        {
+            mayor = a[i]; // actualizamos el valor del menor
+        }
+    }
+    cout << "el numero menor es: " << menor;
+    cout << "el numero mayor es: " << mayor;
+    
+  return 0;
+}
+
+15.CODIGO CLASE IGUAL
+o = sizeof(a)/ sizeof(a[0]);
+  cout<<"\n"<<tamanio;
+//valor maximo de manera dinamica
+  for(int i=0; i<tamanio;i++){
+    //cout<<"\n"<<"el valor se repite: "<<i;
+    cout<<"\n"<<"el valor del vecto a["<<i<<"]"<< a[i];
+  }
+
+//numero menor
+  int menor = a[0];
+
+    for (int i = 1; i < tamanio; i++)
+    {
+        if (a[i] < menor)
+        {
+            menor = a[i]; // actualizamos el valor del menor
+        }
+    }
+    
+    //numero mayor
+    int mayor = a[0];
+
+    for (int i = 1; i < tamanio; i++)
+    {
+        if (a[i] > mayor)
+        {
+            mayor = a[i]; // actualizamos el valor del menor
+        }
+        //numero igual
+    }
+    int numero_igual =3 ; a[0];
+
+    for (int i = 1; i < tamanio; i++)
+    {
+        if (a[i] == numero_igual)
+        {
+            numero_igual = a[i]; // actualizamos el valor del menor
+        }
+    }
+    cout << "el numero menor es: " << menor;
+
+    cout << "el numero mayor es: " << mayor;
+
+    cout << "el numero i
+gual es: " << numero_igual;
+
+  return 0;
+}
+16. FOR MEJORADO CLASE
+
+////////////////////////////////////
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[] = {0, 5, 3, 20, 15, 3, 35, 45, -1, 3};
+    int tamaño = sizeof(a) / sizeof(a[0]);
+    cout << "\n"
+         << tamaño;
+    // valor maximo de manera dinamica
+    for (int i = 0; i < tamaño; i++)
+    {
+        // cout<<"\n"<<"el valor se repite: "<<i;
+        cout << "\n"
+             << "el valor del vecto a[" << i << "]" << a[i] << "\n";
+    }
+
+    int menor = a[0];
+
+    for (int i = 1; i < tamaño; i++)
+    {
+        if (a[i] < menor)
+        {
+            menor = a[i]; // actualizamos el valor del menor
+        }
+    }
+
+    // numero mayor
+    int mayor = a[0];
+
+    for (int i = 1; i < tamaño; i++)
+    {
+        if (a[i] > mayor)
+        {
+            mayor = a[i]; // actualizamos el valor del menor
+        }
+    }
+    // numero igual_ mal diseñado
+    int numero_igual = 0;
+    /*
+        for (int i = 1; i < tamaño; i++)
+        {
+            if (a[i] == numero_igual)
+            {
+                numero_igual = a[i]; // actualizamos el valor del menor
+            }
+        }
+        */
+    // numero igual mejorado
+    for (int i = 0; i < tamaño; i++)
+    {
+        int numero_igual_temp = a[i];
+        for (int y = 0; y < tamaño; y++)
+        {
+            if (numero_igual_temp == a[y])
+            {
+                numero_igual = a[y];
+            }
+        }
+    }
+    cout << "el numero menor es: " << menor << "\n";
+    cout << "el numero mayor es: " << mayor << "\n";
+    cout << "el numero igual es: " << numero_igual << "\n";
+
+    return 0;
+}
+
+17.tarea dia jueves
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5];
+    int mayor = arr[0], menor = arr[0], suma = 0, frec = 1, moda = arr[0], temp;
+    float promedio, media;
+
+    // Ingreso de valores por teclado
+    for(int i=0; i<5; i++) {
+        cout << "Ingrese un valor para la posicion " << i << ": ";
+        cin >> arr[i];
+
+        // Cálculo de suma
+        suma += arr[i];
+
+        // Cálculo de mayor y menor
+        if(arr[i] > mayor) mayor = arr[i];
+        if(arr[i] < menor) menor = arr[i];
+
+        // Cálculo de moda
+        for(int j=i+1; j<5; j++) {
+            if(arr[i] == arr[j]) {
+                frec++;
+            }
+        }
+        if(frec > temp) {
+            temp = frec;
+            moda = arr[i];
+        }
+        frec = 1;
+    }
+
+    // Cálculo de promedio
+    promedio = (float)suma / sizeof(arr);
+
+    // Cálculo de media
+    media = (float)(arr[2] + arr[3]) / 2;
+
+    // Ordenamiento de mayor a menor
+    for(int i=0; i<5; i++) {
+        for(int j=i+1; j<5; j++) {
+            if(arr[i] < arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Impresión de resultados
+    cout << "El número mayor es: " << mayor << endl;
+    cout << "El número menor es: " << menor << endl;
+    cout << "El número que se repite es: " << moda << endl;
+    cout << "Se repite " << temp << " veces" << endl;
+    cout << "La suma de los valores es: " << suma << endl;
+    cout << "El arreglo ordenado de mayor a menor es: ";
+    for(int i=0; i<5; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    // Ordenamiento de menor a mayor
+    for(int i=0; i<5; i++) {
+        for(int j=i+1; j<5; j++) {
+            if(arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    cout << "El arreglo ordenado de menor a mayor es: ";
+    for(int i=0; i<5; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    cout << "El promedio es: " << promedio << endl;
+    cout << "La media es: " << media << endl;
+
+    // Reemplazo de valor en la posición media
+    arr[2] = 25;
+    cout << "El arreglo con la posición media reemplazada por 25 es: ";
+    for(int i=0; i<5; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+18: clase
+
+#include <iostream>
+using namespace std;
+
+// declaramos funciones
+// void suma_matriz(int matriz[5][4],int filas, int columnas);
+//  funcion sumatoria
+int suma_matriz(int matriz_suma[5][4], int fila, int columna)
+{
+    int suma = 0;
+    for (int i = 0; i < fila; i++)
+    {
+        for (int j = 0; j < columna; j++)
+        {
+            suma += matriz_suma[i][j]; // suma = suma + matriz_suma[i][j];
+        }
+    }
+    return suma;
+}
+// funcion para mostrar matriz
+void imprimir_matriz(int matriz_mostrar[5][4], int filas, int columnas)
+{
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            cout << "\t" << matriz_mostrar[i][j];
+        }
+        cout << "\n";
+    }
+}
+
+int main()
+{
+    // declaramos una matriz de 5*4
+
+    int matriz[5][4] = {{2, 3, 4, 5}, {6, 7, 8, 9}, {10, 11, 12, 13}, {14, 15, 16, 17}, {18, 19, 20, 21}};
+
+    cout << matriz[2][4];
+    cout << "\n";
+    cout << matriz[3][0];
+    cout << "\n";
+    cout << matriz[5][4] << "\n";
+
+    imprimir_matriz(matriz, 5, 4);
+    int sum = suma_matriz(matriz, 5, 4);
+    cout << "la suma es:" << sum;
+    return 0;
+    
+19_
+
+#include <iostream>
+
+using namespace std;
+
+int suma(int num1, int num2) {
+    return num1 + num2;
+}
+
+int resta(int num1, int num2) {
+    return num1 - num2;
+}
+
+int multiplicacion(int num1, int num2) {
+    if (num2 == 0) {
+        cout << "Error: no se puede dividir por cero." << endl;
+        return 0;
+    } else {
+        return num1 * num2;
+    }
+}
+
+int division(int num1, int num2) {
+    if (num2 == 0) {
+        cout << "Error: no se puede dividir por cero." << endl;
+        return 0;
+    } else {
+        return num1 / num2;
+    }
+}
+
+int main() {
+    int num1, num2;
+    cout << "Ingrese el primer numero: ";
+    cin >> num1;
+    cout << "Ingrese el segundo numero: ";
+    cin >> num2;
+    cout << "La suma de los numeros es: " << suma(num1, num2) << endl;
+    cout << "La resta de los numeros es: " << resta(num1, num2) << endl;
+    cout << "La multiplicacion de los numeros es: " << multiplicacion(num1, num2) << endl;
+    cout << "La division de los numeros es: " << division(num1, num2) << endl;
+    return 0;
+}
+
+20:
+
+[10:38, 28/3/2023] Danny-----: #include <iostream>
+
+using namespace std;
+
+int suma(int numero1, int numero2)
+{
+    int suma = 0;
+    suma = numero1 + numero2;
+    return suma;
+}
+
+int resta(int numero1, int numero2)
+{
+    return numero1 - numero2;
+}
+
+float division(float dividendo, float divisor)
+{
+    float division = 0;
+    if (divisor == 0)
+    {
+        cout << "no se puede dividir entre cero"
+             << "\n";
+    }
+    else
+    {
+        // division = divisor / dividendo;
+        division = dividendo / divisor;
+    }
+    return division;
+}
+
+int multiplicacion(int numero1, int numero2)
+{
+    return numero1 * numero2;
+}
+
+void es_par(int numero)
+{
+    if (numero % 2 == 0)
+    {
+        cout << "el numero :" << numero << " es par \n";
+    }
+    else
+    {
+        cout << "el numero :" << numero << " es impar \n";
+    }
+}
+
+bool es_primo(int num)
+{
+    if (num == 1)
+    {
+        // cout<<"no es primo";
+        return false;
+    }
+    for (int i = 2; i <= num / 2; i++)
+    {
+        if (num % i == 0)
+        {
+            // cout<<"no es primo";
+            return false;
+        }
+    }
+    return true;
+}
+
+void esPrimo(int numero)
+{
+    if (es_primo(numero))
+    {
+        cout << "el numero :" << numero << " es primo \n";
+    }
+    else
+    {
+        cout << "el numero :" << numero << " no es primo \n";
+    }
+}
+
+void tabla_multiplicar(int hasta)
+{
+    for (int i = 1; i <= hasta; i++)
+    {
+        cout << "** la tabla del ***" << i << "\n";
+        for (int j = 1; j < 13; j++)
+        {
+            cout << i << " x " << j << " = " << i * j << "\n";
+        }
+        cout << "\n";
+    }
+}
+void nombre_mes(int mes)
+{
+    switch (mes)
+    {
+    case 1:
+        cout << "El nombre del mes es Enero";
+        break;
+    case 2:
+        cout << "El nombre del mes es Febrero";
+        break;
+    case 3:
+        cout << "El nombre del mes es Marzo";
+        break;
+    case 4:
+        cout << "El nombre del mes es Abril";
+        break;
+    case 5:
+        cout << "El nombre del mes es Mayo";
+        break;
+    case 6:
+        cout << "El nombre del mes es Junio";
+        break;
+    case 7:
+        cout << "El nombre del mes es Julio";
+        break;
+    case 8:
+        cout << "El nombre del mes es Agosto";
+        break;
+    case 9:
+        cout << "El nombre del mes es Septiembre";
+        break;
+    case 10:
+        cout << "El nombre del mes es Octubre";
+        break;
+    case 11:
+        cout << "El nombre del mes es Noviembre";
+        break;
+    case 12:
+        cout << "El nombre del mes es Diciembre";
+        break;
+    default:  cout << "El numero de mes no es valido";
+        break;
+    }
+}
+
+int main()
+{
+    int num1, num2, mes;
+    cout << "ingrese dos numeros para la suma: ";
+    cin >> num1;
+    cin >> num2;
+    cout << "la suma es: \t" << suma(num1, num2) << "\n";
+    cout << "la resta es: \t" << resta(num1, num2) << "\n";
+    cout << "la division es: \t" << division(num1, num2) << "\n";
+    cout << "la multiplicacion es: \t" << multiplicacion(num1, num2) << "\n";
+
+    es_par(num1);
+    es_par(num2);
+
+    esPrimo(num1);
+    es_primo(num2);
+
+    tabla_multiplicar(13);
+
+    cout << "ingrese el numero del mes: ";
+    cin >> mes;
+    nombre_mes(mes);
+    return 0;
+}
+
+21:
+#include <iostream>
+using namespace std;
+
+/*carnet
+codigo
+nombres
+apellido
+genero
+semestre
+fecha de nacimiento*/
+
+/*tipo de datos
+int
+string
+string
+int
+char
+char
+int
+*/
+
+/*clases y objetos
+palabra reservada "class"*/
+
+string re;
+
+22.
+//librerias
+#include <string>
+#include <iostream>
+
+using namespace std;
+/clases y objetos son componentes/
+
+/*
+private puede ser llamada en la misma clase
+public puede ser llamada por cualquier clase
+protected puede ser llamada en la misma clase y con su hij(@) o herencia*/
+
+/nombre de la clases, atributos, metodos y funciones/
+class Estudiante{
+    private:
+    //atributos
+    string codigo;
+    string nombre;
+    string apellido;
+    string dni;
+    int edad;
+    //datetime fecha_nacimiento;
+
+    //metodos y funciones
+    public:
+    //constructor
+     Estudiante(string _nombre, string _apellido, string _dni, int _edad){
+        nombre = _nombre;
+        apellido = _apellido;
+        dni = _dni;
+        edad = _edad;
+    }
+
+    string getCodigo()
+    {
+        return codigo;
+    }
+    string getNombre(){
+        return nombre;
+    }
+    string getApellido(){
+        return apellido;
+    }
+    
+    string getDni(){
+        return dni;
+    }
+
+    void setCodigo(string _codigo){
+codigo = _codigo;
+    }
+    void setNombre(string _nombre){
+nombre = _nombre;
+    }
+    void setApellido(string _apellido){
+apellido = _apellido;
+    }
+    void setDni(string _dni){
+dni = _dni;
+    }
+
+   int getEdad(){
+return edad;
+    }
+
+   void setEdad(int _edad)
+   {
+    edad = _edad;
+   }
+    //datetime fecha_nacimiento;
+   //datetime fecha_nacimiento;
+void imprimir(){
+    cout<<"los datos del estudiante es:\t"<<nombre<<" "<<apellido<<" "<<dni<<"\n"<<edad<<"\n";
+}
+
+
+};
+
+int main(){
+    //crear objetos
+    //Estudiante est = new Estudiante();
+    Estudiante est("Jorge", "el Curioso", "123", 20);
+    Estudiante est2("Patroclo", "Javier", "8092223", 25);
+    Estudiante est3("Alquimedes", "Rodriguez", "789", 82);
+    /*cout<<"el nombre del estudiante es: "<<est.getNombre();
+    cout<<"el dni del estudiante es: "<<est.getDni();
+    cout<<"el apellido del estudiante es: "<<est.getApellido();
+*/
+cout<<"los datos de los estudiantes son:"<<"\n";
+ est.imprimir();
+ est2.imprimir();
+ est3.imprimir();
+
+
+ est.setNombre("Jumanji");
+ est.setDni("21156156");
+ est.setEdad(200);
+ est.imprimir();
+}
+
+/*tarea crear una clase CURSO
+  notas
+  identificar mas atributos
+  para el martes*/
+
+23.
+#include<iostream>
+
+using namespace std;
+
+int suma(int num1,int num2)
+{
+    int suma=0;
+    suma = num1 +num2;
+
+    cout<<"La suma es = "<<suma<<endl;
+
+
+    return 0;
+}
+
+int resta(int num1,int num2)
+{
+    int resta=0;
+
+    resta = num1 - num2;
+
+    cout<<"La resta es = "<<resta<<endl;
+
+    return 0;
+}
+
+int multiplicacion(int num1,int num2)
+{
+    int multiplicacion=0;
+
+    multiplicacion = num1 * num2;
+
+
+    cout<<"La multiplicacion es = "<<multiplicacion<<endl;
+
+    return 0;
+}
+
+float division(float dividendo,float divisor)
+{
+    float division=0;
+
+    if(divisor!=0)
+    {
+        division = dividendo/divisor;
+        cout<<"la division es = "<<division<<endl<<endl;
+
+    }
+    else
+    {
+        cout<<"Un numero ingresado no es valido en la operacion"<<endl<<endl;
+
+    }
+
+    return division;
+}
+
+void num_par(int num1,int num2)
+{
+    
+
+    if(num1%2==0)
+    {
+        cout<<"El numero "<<num1<<" es par"<<endl;
+
+    }
+    else
+    {
+        cout<<"El numero "<<num1<<" es impar"<<endl;
+
+    }
+
+    if(num2%2==0)
+    {
+        cout<<"El numero "<<num2<<" es par"<<endl;
+
+    }
+    else
+    {
+        cout<<"El numero "<<num2<<" es impar"<<endl;
+
+
+    }
+
+
+}
+
+void primo(int numero)
+{
+    string cadena="ES PRIMO";
+    
+    for(int i=0;i<numero;i++)
+    {
+        if(numero%2==0)
+        {
+            cadena="no es primo";
+
+
+        }
+
+    }
+
+    cout<<cadena;
+
+
+}
+
+void mes()
+{
+    int mes=0;
+    cout<<"INGRESE EL NUMERO DE MES "<<endl;
+    cin>>mes;
+
+    switch(mes)
+    {    
+        case 1: 
+            
+            cout<<"ENERO";
+
+             break;;
+        case 2: 
+            cout<<"FEBRERO";
+            break;
+        case 3:
+
+            cout<<"MARZO";
+            break;
+        case 4:
+            cout<<"ABRIL";
+            break;
+
+        case 5:
+            cout<<"MAYO"; 
+            break; 
+
+        case 6:
+            cout<<"JUNIO";
+            break;
+
+        case 7:
+            cout<<"JULIO";
+            break;
+
+        case 8:
+            cout<<"AGOSTO";
+            break;
+
+        case 9:
+            cout<<"SEPTIEMBRE";
+            break;
+
+        case 10:
+            cout<<"OCTUBRE";
+            break;
+
+        case 11:
+            cout<<"NOVIEMBRE";
+            break;
+
+        case 12:
+            cout<<"DICIEMBRE";
+            break;
+
+        default:
+        {
+            cout<<"numero no valido";
+        }
+    }
+}
+
+int tabla(int multi)
+{
+    for(int i=0;i<=12;i++)
+    {
+        cout<<multi<<" x "<< i <<" = "<<multi*i<<endl;
+
+    }
+
+}
+
+
+
+
+
+int main()
+{
+    float num1,num2;
+    cout<<"INGRES DOS NUMERO"<<endl;
+    cin>>num1;
+    cin>>num2;
+
+    suma(num1,num2);
+    resta(num1,num2);
+    multiplicacion(num1,num2);
+    division(num1,num2);
+    num_par(num1,num2);
+    cout<<endl;
+    cout<<"ingrese un numero"<<endl;
+    int numero;
+    cin>>numero;
+    primo(numero);
+
+    cout<<endl;
+    mes();
+    cout<<endl<<endl;
+    for(int i=0;i<=12;i++)
+    {
+        tabla(13);
+        cout<<endl;
+
+    }
+    
+
+
+
+    return 0;
+}
+24.
+#include <iostream>
+#include <Math.h>
+#include <cmath>
+using namespace std;
+
+//crear clase 
+class Triangulo {
+    //atributos
+    private:
+     int base;
+     int altura;
+     
+     //constructores y metodos
+    //constructor
+    public: 
+    Triangulo(int _altura, int _base){
+        base=_base;
+        altura = _altura;
+    }
+    
+    //metodos
+    //getter and setter
+     int getBase(){
+        return base;
+     }
+     void setBase(int _base){
+        base = _base;
+     }
+
+     int getAltura(){
+        return altura;
+     }
+     void setAltura(int _altura){
+        altura = _altura;
+     }
+    
+    //crear funciones
+    float calcular_hipotenusa(){
+      float hipotenusa = sqrt((base*base)+(altura*altura));
+      return hipotenusa;
+    }
+
+    float perimetro(){
+      float perimetro = altura + base + calcular_hipotenusa();
+      return perimetro;
+    }
+
+    float area(){
+      float area = (base*altura)/2;
+      return area;
+    }
+};
+
+int main (){
+   Triangulo triangulo_1(5,4);
+   Triangulo triangulo_2(14,15);
+   //cambiamos la base del triangulo 1
+   triangulo_1.setBase(20);
+   //imprimimos los valores de la base de los triangulos
+   cout<<triangulo_1.getBase();
+   cout<<"\n";
+   cout<<triangulo_2.getBase();
+   //pregunta 1
+  
+   triangulo_1.setAltura(15);
+   triangulo_2.setAltura(25);
+   //pregunta 2
+   cout << triangulo_1.perimetro();
+
+
+   return 0;
+}
+25:
+#include <iostream>
+#include <Math.h>
+#include <cmath>
+using namespace std;
+
+//crear clase 
+class Triangulo {
+    //atributos
+    private:
+     int base;
+     int altura;
+     
+     //constructores y metodos
+    //constructor
+    public: 
+    Triangulo(int _altura, int _base){
+        base=_base;
+        altura = _altura;
+    }
+    
+    //metodos
+    //getter and setter
+     int getBase(){
+        return base;
+     }
+     void setBase(int _base){
+        base = _base;
+     }
+
+     int getAltura(){
+        return altura;
+     }
+     void setAltura(int _altura){
+        altura = _altura;
+     }
+    
+    //crear funciones
+    float calcular_hipotenusa(){
+      float hipotenusa = sqrt((base*base)+(altura*altura));
+      return hipotenusa;
+    }
+
+    float perimetro(){
+      float perimetro = altura + base + calcular_hipotenusa();
+      return perimetro;
+    }
+
+    float area(){
+      float area = (base*altura)/2;
+      return area;
+    }
+
+    void tipoTriangulo(){
+      //base, altura
+      float hipotenusa = calcular_hipotenusa();
+      //es equilatero --> cuando sus lados son iguales
+      if(base == altura && altura == hipotenusa && base == hipotenusa){
+         cout<<"el triangulo es equilatero";
+      }
+      // es isoceles --> almenos dos de sus lados son iguales
+       if(base == altura || altura == hipotenusa || base == hipotenusa){
+         cout<<"el triangulo es isoceles";
+      }
+      // es escaleno --> cuando todos sus lados son diferentes
+      if(base != altura && altura != hipotenusa && base != hipotenusa){
+         cout<<"el triangulo es escaleno";
+      }
+    }
+};
+
+int main (){
+   Triangulo triangulo_1(5,4);
+   Triangulo triangulo_2(14,15);
+   //cambiamos la base del triangulo 1
+   triangulo_1.setBase(20);
+   //imprimimos los valores de la base de los triangulos
+   cout<<triangulo_1.getBase();
+   cout<<"\n";
+   cout<<triangulo_2.getBase();
+   //pregunta 1
+   
+   /*triangulo triangulo_1 (10,4);
+   triangulo triangulo_2 (11,6);
+   triangulo set.altura(15);*/
+
+   //modificamos la altura de los tringulos
+   triangulo_1.setAltura(15);
+   triangulo_2.setAltura(25);
+
+   // pregunta 2
+
+   cout <<"El perimetro del triangulo 1 es :"<< triangulo_1.perimetro();
+   cout<<"\n";
+   // pregunta 3
+
+   //cout << calcular_hipotenusa();
+   //calcular la hipotenusa para el triangulo 2
+   cout<<"hipotenusa del triangulo 2 es :"<<triangulo_2.calcular_hipotenusa();
+   cout<<"\n";
+   //pregunta 4
+   cout<<"El area del triangulo 1 es:"<<triangulo_1.area();
+   cout<<"\n";
+   cout<<"El area del triangulo 2 es:"<<triangulo_2.area();
+   cout<<"\n";
+   
+   //suma de perimetro
+   cout<<"la suma de perimetros de los triangulos es : "<<triangulo_1.perimetro()+triangulo_2.perimetro()<<"\n";
+   cout<<"\n";
+   //suma de areas 
+   float suma=triangulo_1.area()+triangulo_2.area();
+   cout<<"la suma de las areas de los tringulos es: "<<suma; 
+   cout<<"\n";
+   
+   triangulo_1.tipoTriangulo
+
+   return 0;
+}
+26:
+#include <iostream>
+
+class Cuadrilatero {
+public:
+    // Constructor
+    Cuadrilatero(double b, double h) : base(b), altura(h) {}
+
+    // Métodos para manipular variables
+    void setBase(double b) { base = b; }
+    void setAltura(double h) { altura = h; }
+    double getBase() const { return base; }
+    double getAltura() const { return altura; }
+
+    // Métodos para calcular área y perímetro
+    double area() const { return base * altura; }
+    double perimetro() const { return 2 * (base + altura); }
+
+private:
+    double base;
+    double altura;
+};
+
+int main() {
+    // Crear un objeto Cuadrilatero con base 4 y altura 3
+    Cuadrilatero c(4.0, 3.0);
+
+    // Imprimir la base, altura, área y perímetro del objeto
+    std::cout << "Base: " << c.getBase() << std::endl;
+    std::cout << "Altura: " << c.getAltura() << std::endl;
+    std::cout << "Área: " << c.area() << std::endl;
+    std::cout << "Perímetro: " << c.perimetro() << std::endl;
+
+    // Cambiar la base a 5 y la altura a 2
+    c.setBase(5.0);
+    c.setAltura(2.0);
+
+    // Imprimir la base, altura, área y perímetro del objeto actualizado
+    std::cout << "Base: " << c.getBase() << std::endl;
+    std::cout << "Altura: " << c.getAltura() << std::endl;
+    std::cout << "Área: " << c.area() << std::endl;
+    std::cout << "Perímetro: " << c.perimetro() << std::endl;
+
+    return 0;
+}
+
+27:#include <iostream>
+using namespace std;
+
+class Cuadrilatero {
+private:
+  double lado1, lado2, lado3, lado4; // atributos para los lados del cuadrilatero
+public:
+  // constructor para inicializar los lados
+  Cuadrilatero(double l1, double l2, double l3, double l4) {
+    lado1 = l1;
+    lado2 = l2;
+    lado3 = l3;
+    lado4 = l4;
+  }
+
+  // metodo para modificar los lados
+  void modificarLados(double l1, double l2, double l3, double l4) {
+    lado1 = l1;
+    lado2 = l2;
+    lado3 = l3;
+    lado4 = l4;
+  }
+
+  // metodo para calcular la sumatoria de los lados
+  double sumatoriaLados() {
+    return lado1 + lado2 + lado3 + lado4;
+  }
+
+  // metodo para calcular el area del cuadrilaatero
+  double calcularArea() {
+    return lado1 * lado2;
+  }
+
+  // metodo para calcular el perimetro del cuadrilatero
+  double calcularPerimetro() {
+    return lado1 + lado2 + lado3 + lado4;
+  }
+};
+
+int main() {
+  // 1. Declarar 3 objetos de tipo cuadrilatero
+  Cuadrilatero c1(4, 4, 4, 4);
+  Cuadrilatero c2(5, 5, 5, 5);
+  Cuadrilatero c3(6, 6, 6, 6);
+
+  // 2. Modificar los lados de 2 objetos
+  c1.modificarLados(3, 3, 3, 3);
+  c2.modificarLados(6, 6, 6, 6);
+
+  // 3. Realizar la sumatoria de los lados por objeto y el total
+  cout << "sumatoria de los lados del cuadrilatero 1: " << c1.sumatoriaLados() << endl;
+  cout << "sumatoria de los lados del cuadrilatero 2: " << c2.sumatoriaLados() << endl;
+  cout << "sumatoria de los lados del cuadrilatero 3: " << c3.sumatoriaLados() << endl;
+
+  double totalSumatoriaLados = c1.sumatoriaLados() + c2.sumatoriaLados() + c3.sumatoriaLados();
+  cout << "sumatoria total de los lados: " << totalSumatoriaLados << endl;
+
+  // 4. realizar el calculo del area y perimetro de cada objeto
+  cout << "area del cuadrilatero 1: " << c1.calcularArea() << endl;
+  cout << "perimetro del cuadrilatero 1: " << c1.calcularPerimetro() << endl;
+  cout << "area del cuadrilatero 2: " << c2.calcularArea() << endl;
+  cout << "perimetro del cuadrilatero 2: " << c2.calcularPerimetro() << endl;
+  cout << "area del cuadrilatero 3: " << c3.calcularPerimetro() << endl;
+  cout << "Área del cuadrilátero 3: " << c3.calcularArea() << endl;
+
+  // 5 calcular la sumatoria de las areas de todos los objetos
+  double totalArea = c1.calcularArea() + c2.calcularArea() + c3.calcularArea();
+  cout << "sumatoria total de las areas: " << totalArea << endl;
+
+  // 6. calcular la sumatoria del perimetro de todos los objetos
+  double totalPerimetro = c1.calcularPerimetro() + c2.calcularPerimetro() + c3.calcularPerimetro();
+  cout << "sumatoria total del perimetro: " << totalPerimetro << endl;
+
+  return 0;
+}
+
+28:
+
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+class Persona
+{
+private:
+    string apellido;
+    string nombre;
+    string direcion;
+    string dni;
+    string fecha_nacimiento;
+
+public:
+    Persona(string _apellidos, string _nombres, string _dni)
+    {
+        apellido = _apellidos;
+        nombres = _nombres;
+        dni = _dni;
+    }
+    // metodos de getter an setter
+    string getApellidos()
+    {
+        return apellido;
+    }
+
+    void setApellidos(string _apellidos)
+    {
+        apellido = _apellidos;
+    }
+
+    string getNombres()
+    {
+        return nombres;
+    }
+
+    void setNombre(string _nombre)
+    {
+        nombres = _nombre;
+    }
+
+    string getDireccion(){
+        return direcion;
+    }
+
+    void setDireccion(string _direccion){
+       direcion= _direccion; 
+    }
+
+    string getDNI(){
+        return direcion;
+    }
+
+    void setDNI(string _dni){
+       _dni= _dni; 
+    }
+};
+
+
+--------------------estudiante
+#include <iostream>
+29:
+
+#include <string>
+#include <ctime>
+#include "persona.cpp"
+
+
+using namespace std;
+
+class Estudiante : Persona
+{
+private:
+    string codigo_estudiante;
+    string facultad;
+    string correo;
+
+public:
+    // Automovil(int numRuedas, int numPuertas) : Vehiculo(numRuedas), numPuertas_(numPuertas) {}
+
+    Estudiante(string _codigo, string _facultad, string _correo, string _apellidos, string _nombres, string _dni) : Persona(_apellidos, _nombres, _dni)
+    {
+        codigo_estudiante = _codigo;
+        facultad = _facultad;
+        correo = _correo;
+    }
+    // getter an setter
+    string getCodigo()
+    {
+        return codigo_estudiante;
+    }
+    void setCodigo(string _codigo)
+    {
+        codigo_estudiante = _codigo;
+    }
+    string getFacultad()
+    {
+        return facultad;
+    }
+    void setFacultad(string _facultad)
+    {
+        facultad = _facultad;
+    }
+    string getCorreo()
+    {
+        return correo;
+    }
+    void setCorreo(string _correo)
+    {
+        correo = _correo;
+    }
+    void getDatos()
+    {
+        cout << "los datos del estudiante es: " << getNombres() << ", " << getApellidos() << " " << getDNI();
+    }
+};
+
+30:
+
+#include <iostream>
+#include <string>
+#include <ctime>
+
+#include "estudiante.cpp"
+
+using namespace std;
+
+int main(){
+
+    Estudiante est("2023000001","FIIS", "juanito.perez@unas.edu.pe","perez", "juanito", "44444444");
+
+    cout<<"Estudiantes : \n";
+    est.getDatos();
+
+    return 0;
+
+}
+
+ //franco rubina
+
+	estudiante est2("20210090" , "FIME", "cinthia.perez@unas.edu.pe" , "carlos" , "manuel" , "97270027");
+	estudiante est3("20210090" , "FIIS", "maria.perez@unas.edu.pe" , "contreras" , "maria" , "97270040");
+	estudiante est4("20210090" ,"FACEA", "frank.perez@unas.edu.pe" , "cardenas" , "farnk" , "97270047");
+  
+  
+  //Jhon Chuquino
+  
+  Estudiante est_1("20220456", "FIA", "jose.caldas@unas.edu.pe" ," jose", "caldas", "234567");
+  Estudiante est_2("20223457", "FIME", "carlos.solar@unas.edu.pe", " carlos", "solar", "345678");
+  Estudiante est_3("20223412", "FIA", "marco.palacios@unas.edu.pe", "marco", "palacios", "3457177");
+
+	//calderon carlos
+  
+	estudiante est2("20211012" ,"FIA" , "karolay.perez@unas.edu.pe" , "perez" , "karolay" , "77223564");
+	estudiante est3("20210131" ,"FIIS" , "marta.savedra@unas.edu.pe" , "cardenas" , "marta" , "43273694");
+	estudiante est4("20210156" ,"FIE" , "franco.rubina@unas.edu.pe" , "contreras" , "farnco" , "94527015");
+  
+  // COZ PAZ
+    Estudiante est1("202300001","FIME","jorge.flores@unas.edu.pe","flores","jorge","45454545");
+    Estudiante est2("202300002","FIIS","pedro.quispe@unas.edu.pe","quispe","pedro","67676767");
+    Estudiante est3("202300003","FIA","juan.lara@unas.edu.pe","lara","juan","98989898");
+-----------------------
+//EXALTACION COTRINA
+Estudiante est2("2020007","ZOOTECNIA", "manuel.lopez@unas.edu.pe","lopez", "manuel", "20458771");
+Estudiante est3("2000485","RNR", "therry.exaltacion@unas.edu.pe","exaltacion", "therry", "2024575");
+Estudiante est4("20220050","FACEA", "krystal.exaltacion@unas.edu.pe","exaltacion", "krystal", "87541558");
+************************************
+//ACHARTE BERNALES
+----------------------
+    Estudiante est1("2023000003","Zootecnia","kina.malpartida@unas.edu.pe","malpartida","kina","55555555");
+    Estudiante est2("2023000004","FIIA","rosaura.mhkitharian@unas.edu.pe","mhkitharian","rosaura","56666666");
+    Estudiante est3("2023000029","FIME","hector.yandel@unas.edu.pe","yandel","hector","55555558");
+---------------------
+
+//martin romero
+   -----------------------
+    Estudiante est_1("2022051385","administracion","harold.martirio@unas.edu.pe","martin","55555555");
+    Estudiante est_2("2022051389","recursos ","mario.robles@unas.edu.pe","martin","11111111");
+    Estudiante est_3("2022051347","contabilidad ","eduar.rome@.edu.pe","martin","444444444");
+    
+//ANA SOFIA ITUSACA LABERIANO
+
+		Estudiante est1("0020220064","FIIS""jony.dias@unas.edu.pe", "dias", "jony", "54624517");
+    Estudiante est2("0020220104","FIME""alvaro.reyes@unas.edu.pe", "reyes", "alvaro", "72649710");
+    Estudiante est3("0020220004","FIME""kevin.rojas@unas.edu.pe", "rojas", "kevin", "65321785");
+    
+// OSCAR JESUS CHAVEZ CARRION
+
+		Estudiante est1("2022001","FIIS","axel.acharte@unas.edu.pe", "acharte", "axel", "84724623");
+    Estudiante est2("2022002","FIME","jose.martinez@unas.edu.pe", "mantinez", "jose", "73463283");
+    Estudiante est3("2022003","RNR","manuel.jimenez@unas.edu.pe", "jimenez", "manuel", "62523345");
+    
+//Orihuela Aspilcueta
+    Estudiante est1("153542","FIIS","Pedrito.Rojas@unas.edu.pe","Rojas","Pedrito","Av. losMatones","76018810");
+    Estudiante est2("46346354","FIME","Jorgito.Acharte@unas.edu.pe","Acharte","Jorgito","Av.","74382424");
+    Estudiante est3("1535444","Zootecnia","Cantinflaso@unas.edu.pe","Bernales","Cantinflas","sadas","73498245");
+    
+    //Martinez Hurtado Euler Losvin
+    
+    
+    Estudiante est1("0020180342","ECONOMIA","jasmin.palacios@unas.edu.pe","palacios","jasmin","34725463");
+    Estudiante est2("0020150234","CONTABILIDAD","pedro.acharte@unas.edu.pe","acharte","pedro","78656664");
+    Estudiante est3("002010231","ZOTECNIA","axel.lalangui@.edu.pe","lalangui","Axel","74526323");
+    
+    
+    
+    gystyvre
+    
+    
+31:main_estudiante
+#include <iostream>
+#include <string>
+#include <ctime>
+
+#include "estudiante.cpp"
+
+using namespace std;
+
+int main()
+{
+
+    Estudiante est("2023000001", "FIIS", "juanito.perez@unas.edu.pe", "perez", "juanito", "44444444");
+
+    // franco rubina
+
+    /*
+    Estudiante est2("20210090", "cinthia.perez@unas.edu.pe", "carlos", "manuel", "97270027");
+    Estudiante est3("20210090", "maria.perez@unas.edu.pe", "contreras", "maria", "97270040");
+    Estudiante est4("20210090", "frank.perez@unas.edu.pe", "cardenas", "farnk", "97270047");
+    */
+    // Jhon Chuquino
+
+    Estudiante est2("20220456", "FIA", "jose.caldas@unas.edu.pe", " jose", "caldas", "234567");
+    Estudiante est3("20223457", "FIME", "carlos.solar@unas.edu.pe", " carlos", "solar", "345678");
+    Estudiante est4("20223412", "FIA", "marco.palacios@unas.edu.pe", "marco", "palacios", "3457177");
+
+    // calderon carlos
+
+    /*
+    Estudiante est5("20211012", "karolay.perez@unas.edu.pe", "perez", "karolay", "77223564");
+    Estudiante est6("20210131", "marta.savedra@unas.edu.pe", "cardenas", "marta", "43273694");
+    Estudiante est7("20210156", "franco.rubina@unas.edu.pe", "contreras", "farnco", "94527015");
+    */
+    // COZ PAZ
+    Estudiante est5("202300001", "FIME", "jorge.flores@unas.edu.pe", "flores", "jorge", "45454545");
+    Estudiante est6("202300002", "FIIS", "pedro.quispe@unas.edu.pe", "quispe", "pedro", "67676767");
+    Estudiante est7("202300003", "FIA", "juan.lara@unas.edu.pe", "lara", "juan", "98989898");
+    //-- -- -- -- -- -- -- -- -- -- -- -
+    // EXALTACION COTRINA
+
+    Estudiante est8("2020007", "ZOOTECNIA", "manuel.lopez@unas.edu.pe", "lopez", "manuel", "20458771");
+    Estudiante est9("2000485", "RNR", "therry.exaltacion@unas.edu.pe", "exaltacion", "therry", "2024575");
+    Estudiante est10("20220050", "FACEA", "krystal.exaltacion@unas.edu.pe", "exaltacion", "krystal", "87541558");
+    //************************************
+    // ACHARTE BERNALES
+    Estudiante est11("2023000003", "Zootecnia", "kina.malpartida@unas.edu.pe", "malpartida", "kina", "55555555");
+    Estudiante est12("2023000004", "FIIA", "rosaura.mhkitharian@unas.edu.pe", "mhkitharian", "rosaura", "56666666");
+    Estudiante est13("2023000029", "FIME", "hector.yandel@unas.edu.pe", "yandel", "hector", "55555558");
+
+    // martin romero
+    /*
+    Estudiante est_1("2022051385", "administracion", "harold.martirio@unas.edu.pe", "martin", "55555555");
+    Estudiante est_2("2022051389", "recursos ", "mario.robles@unas.edu.pe", "martin", "11111111");
+    Estudiante est_3("2022051347", "contabilidad ", "eduar.rome@.edu.pe", "martin", "444444444");
+    */
+    // ANA SOFIA ITUSACA LABERIANO
+
+    Estudiante est14("0020552001", "FIIS", "jony.dias@unas.edu.pe", "dias", "jony", "54624517");
+    Estudiante est15("2252001", "FIME", "alvaro.reyes@unas.edu.pe", "reyes", "alvaro", "72649710");
+    Estudiante est16("2428001", "FIME", "kevin.rojas@unas.edu.pe", "rojas", "kevin", "65321785");
+
+    // OSCAR JESUS CHAVEZ CARRION
+
+    Estudiante est17("2022001", "FIIS", "axel.acharte@unas.edu.pe", "acharte", "axel", "84724623");
+    Estudiante est18("2022002", "FIME", "jose.martinez@unas.edu.pe", "mantinez", "jose", "73463283");
+    Estudiante est19("2022003", "RNR", "manuel.jimenez@unas.edu.pe", "jimenez", "manuel", "62523345");
+
+    // Orihuela Aspilcueta  -- direccion add
+    /*
+    Estudiante est18("153542", "FIIS", "Pedrito.Rojas@unas.edu.pe", "Rojas", "Pedrito", "Av. losMatones", "76018810");
+    Estudiante est19("46346354", "FIME", "Jorgito.Acharte@unas.edu.pe", "Acharte", "Jorgito", "Av.", "74382424");
+    Estudiante est20("1535444", "Zootecnia", "Cantinflaso@unas.edu.pe", "Bernales", "Cantinflas", "sadas", "73498245");
+    */
+    // Martinez Hurtado Euler Losvin
+    Estudiante est20("0020180342", "ECONOMIA", "jasmin.palacios@unas.edu.pe", "palacios", "jasmin", "34725463");
+    Estudiante est21("0020150234", "CONTABILIDAD", "pedro.acharte@unas.edu.pe", "acharte", "pedro", "78656664");
+    Estudiante est22("002010231", "ZOTECNIA", "axel.lalangui@.edu.pe", "lalangui", "Axel", "74526323");
+
+    cout << "Estudiantes : \n";
+    est.getDatos();
+
+    return 0;
+}
